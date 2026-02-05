@@ -1,8 +1,41 @@
 import { Download, FolderOpen, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useState, useEffect } from "react";
 
 export const HeroSection = () => {
+  const roles = ["Data Scientist", "ML Engineer", "AI Enthusiast"];
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[currentRoleIndex];
+    const typeSpeed = isDeleting ? 50 : 100;
+    const pauseTime = 2000;
+
+    if (!isDeleting && displayText === currentRole) {
+      setTimeout(() => setIsDeleting(true), pauseTime);
+      return;
+    }
+
+    if (isDeleting && displayText === "") {
+      setIsDeleting(false);
+      setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      setDisplayText((prev) =>
+        isDeleting
+          ? prev.slice(0, -1)
+          : currentRole.slice(0, prev.length + 1)
+      );
+    }, typeSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentRoleIndex, roles]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Image with Overlay */}
@@ -24,18 +57,18 @@ export const HeroSection = () => {
 
       <div className="section-container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm text-primary font-medium">Data Scientist | ML Engineer | AI Enthusiast</span>
-          </div>
-
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in-delay-1">
-            <span className="gradient-text">Data Scientist</span> turning raw data into{" "}
-            <span className="text-foreground">actionable insights</span> using{" "}
-            <span className="gradient-text">Machine Learning & AI</span>
+          {/* Name */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 animate-fade-in">
+            <span className="gradient-text">Aklesh Kumar</span>
           </h1>
+
+          {/* Typewriter Role */}
+          <div className="h-12 md:h-16 flex items-center justify-center mb-8 animate-fade-in-delay-1">
+            <span className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium">
+              {displayText}
+              <span className="inline-block w-0.5 h-6 md:h-8 bg-primary ml-1 animate-pulse" />
+            </span>
+          </div>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-delay-2">
