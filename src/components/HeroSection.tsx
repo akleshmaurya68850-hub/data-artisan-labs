@@ -1,11 +1,11 @@
-import { Download, FolderOpen, Mail } from "lucide-react";
+import { Download, FolderOpen, Mail, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 import profilePhoto from "@/assets/profile-photo.jpg";
 import { useState, useEffect } from "react";
 
 export const HeroSection = () => {
-  const roles = ["Data Scientist", "ML Engineer", "AI Enthusiast"];
+  const roles = ["Data Scientist", "Machine Learning Engineer", "AI Enthusiast"];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -85,28 +85,43 @@ export const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-delay-3">
-            <Button size="lg" className="glow-primary w-full sm:w-auto group">
-              <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-              Download Resume
-            </Button>
             <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/30 hover:bg-primary/10" asChild>
               <a href="#projects">
                 <FolderOpen className="mr-2 h-5 w-5" />
                 View Projects
               </a>
             </Button>
+            <Button size="lg" className="glow-primary w-full sm:w-auto group" asChild>
+              <a href="/resume.pdf" download>
+                <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
+                Download Resume
+              </a>
+            </Button>
             <Button size="lg" variant="secondary" className="w-full sm:w-auto" asChild>
               <a href="#contact">
                 <Mail className="mr-2 h-5 w-5" />
-                Hire Me
+                Contact Me
               </a>
             </Button>
+          </div>
+
+          {/* View Resume Link */}
+          <div className="mt-4 animate-fade-in-delay-3">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Eye className="w-4 h-4" />
+              View Resume in Browser
+            </a>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border/50 max-w-lg mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text">6+</div>
+              <div className="text-3xl md:text-4xl font-bold gradient-text">4+</div>
               <div className="text-sm text-muted-foreground mt-1">ML Projects</div>
             </div>
             <div className="text-center">

@@ -1,72 +1,46 @@
-import { Github, ExternalLink, ChartBar, ShieldCheck, TrendingUp, CreditCard, MessageCircle, Image } from "lucide-react";
+import { Github, CreditCard, Activity, TrendingUp, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
     icon: CreditCard,
-    title: "Loan Approval Prediction",
+    title: "Loan Approval Prediction System",
     problem: "Predict whether a loan application will be approved based on customer financial data.",
-    tech: ["Python", "Pandas", "Scikit-learn"],
-    models: ["Logistic Regression", "Random Forest"],
-    metrics: "Accuracy: 89%, F1-Score: 0.88",
-    impact: "Helps financial institutions reduce risk.",
+    approach: "Data cleaning, EDA, feature engineering, and model comparison to find the best classifier.",
+    tools: ["Python", "Scikit-learn", "Streamlit"],
+    outcome: "Built a Streamlit web app that predicts loan approval with high accuracy.",
     color: "from-cyan-500/20 to-blue-500/20",
     accentColor: "text-cyan-400",
   },
   {
-    icon: TrendingUp,
-    title: "Customer Churn Prediction",
-    problem: "Identify customers likely to leave a service.",
-    tech: ["Python", "EDA", "ML"],
-    models: ["XGBoost", "Random Forest"],
-    metrics: "Recall-focused model to reduce churn.",
-    impact: "Improves customer retention strategy.",
+    icon: Activity,
+    title: "Hospital Data Analysis — Lucknow",
+    problem: "Analyze hospital data to uncover patterns in patient admissions and resource utilization.",
+    approach: "Data cleaning, pivot tables, and interactive dashboards to visualize key hospital metrics.",
+    tools: ["Power BI", "Excel"],
+    outcome: "Created a comprehensive dashboard highlighting trends in patient data and hospital operations.",
     color: "from-purple-500/20 to-pink-500/20",
     accentColor: "text-purple-400",
   },
   {
-    icon: ChartBar,
-    title: "Sales Forecasting",
-    problem: "Forecast future sales using historical data.",
-    tech: ["Time Series Analysis", "Python"],
-    models: ["ARIMA", "Linear Regression"],
-    metrics: "Accurate trend prediction",
-    impact: "Supports inventory and business planning.",
+    icon: TrendingUp,
+    title: "Sales Data Analysis — Excel",
+    problem: "Analyze historical sales data to identify trends and top-performing segments.",
+    approach: "Data aggregation, charting, and conditional formatting for visual storytelling.",
+    tools: ["Excel"],
+    outcome: "Delivered actionable insights on revenue trends and product performance.",
     color: "from-green-500/20 to-teal-500/20",
     accentColor: "text-green-400",
   },
   {
-    icon: ShieldCheck,
-    title: "Fraud Detection System",
-    problem: "Detect fraudulent transactions.",
-    tech: ["Python", "ML"],
-    models: ["Isolation Forest", "Logistic Regression"],
-    metrics: "High precision fraud detection",
-    impact: "Reduces financial fraud risk.",
-    color: "from-red-500/20 to-orange-500/20",
-    accentColor: "text-red-400",
-  },
-  {
-    icon: MessageCircle,
-    title: "Sentiment Analysis (NLP)",
-    problem: "Analyze customer reviews sentiment.",
-    tech: ["NLP", "TF-IDF"],
-    models: ["Naive Bayes", "Logistic Regression"],
-    metrics: "Accurate sentiment classification",
-    impact: "Improves customer feedback analysis.",
-    color: "from-yellow-500/20 to-orange-500/20",
-    accentColor: "text-yellow-400",
-  },
-  {
-    icon: Image,
-    title: "Image Classification",
-    problem: "Classify images into categories.",
-    tech: ["CNN", "TensorFlow"],
-    models: ["Convolutional Neural Network"],
-    metrics: "High accuracy classification",
-    impact: "Practical Deep Learning application.",
-    color: "from-blue-500/20 to-indigo-500/20",
-    accentColor: "text-blue-400",
+    icon: BarChart3,
+    title: "Sales Data Analysis — Tableau",
+    problem: "Visualize and explore sales data interactively for business decision support.",
+    approach: "Connected data sources, built calculated fields, and designed interactive dashboards.",
+    tools: ["Tableau"],
+    outcome: "Published an interactive Tableau dashboard for stakeholder exploration.",
+    color: "from-orange-500/20 to-yellow-500/20",
+    accentColor: "text-orange-400",
   },
 ];
 
@@ -82,12 +56,12 @@ export const ProjectsSection = () => {
               Featured <span className="gradient-text">Projects</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Real-world machine learning solutions that demonstrate my expertise in data science
+              Real-world data science projects demonstrating end-to-end problem solving
             </p>
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
               <div
                 key={project.title}
@@ -96,55 +70,44 @@ export const ProjectsSection = () => {
               >
                 {/* Card Header with Gradient */}
                 <div className={`p-6 bg-gradient-to-br ${project.color}`}>
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3 mb-3">
                     <div className={`w-12 h-12 rounded-xl bg-card/80 backdrop-blur flex items-center justify-center ${project.accentColor}`}>
                       <project.icon className="w-6 h-6" />
                     </div>
-                    <div className="flex gap-2">
-                      <Button size="icon" variant="ghost" className="w-8 h-8 rounded-lg bg-card/50 hover:bg-card">
-                        <Github className="w-4 h-4" />
-                      </Button>
-                      <Button size="icon" variant="ghost" className="w-8 h-8 rounded-lg bg-card/50 hover:bg-card">
-                        <ExternalLink className="w-4 h-4" />
-                      </Button>
-                    </div>
+                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-6 space-y-4">
-                  <p className="text-sm text-muted-foreground">{project.problem}</p>
+                  <div>
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Problem</span>
+                    <p className="text-sm text-foreground/80 mt-1">{project.problem}</p>
+                  </div>
 
-                  {/* Tech Stack */}
+                  <div>
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Approach</span>
+                    <p className="text-sm text-foreground/80 mt-1">{project.approach}</p>
+                  </div>
+
+                  {/* Tools */}
                   <div className="flex flex-wrap gap-1.5">
-                    {project.tech.map((tech) => (
+                    {project.tools.map((tool) => (
                       <span
-                        key={tech}
+                        key={tool}
                         className="px-2 py-0.5 text-xs rounded bg-primary/10 text-primary border border-primary/20"
                       >
-                        {tech}
+                        {tool}
                       </span>
                     ))}
                   </div>
 
-                  {/* Models */}
-                  <div>
-                    <span className="text-xs text-muted-foreground">Models: </span>
-                    <span className="text-xs text-foreground">{project.models.join(", ")}</span>
-                  </div>
-
-                  {/* Metrics */}
-                  <div className="text-xs">
-                    <span className={`font-medium ${project.accentColor}`}>{project.metrics}</span>
-                  </div>
-
-                  {/* Impact */}
+                  {/* Outcome */}
                   <div className="pt-4 border-t border-border/50">
-                    <span className="text-xs text-muted-foreground">Impact: </span>
-                    <span className="text-sm text-foreground">{project.impact}</span>
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Outcome</span>
+                    <p className="text-sm text-foreground/80 mt-1">{project.outcome}</p>
                   </div>
                 </div>
               </div>
@@ -154,7 +117,7 @@ export const ProjectsSection = () => {
           {/* View More Button */}
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" className="border-primary/30 hover:bg-primary/10" asChild>
-              <a href="https://github.com/aklesh-ds" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/akleshmaurya68850-hub" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-5 w-5" />
                 View All Projects on GitHub
               </a>

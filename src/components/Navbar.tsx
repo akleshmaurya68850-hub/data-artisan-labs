@@ -7,7 +7,6 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -34,9 +33,9 @@ export const Navbar = () => {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center glow-border">
-              <span className="text-primary font-bold text-lg">AK</span>
+              <span className="text-primary font-bold text-lg">A</span>
             </div>
-            <span className="font-semibold text-lg hidden sm:block">Aklesh Kumar</span>
+            <span className="font-semibold text-lg hidden sm:block">Aklesh</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -17,14 +17,14 @@ export const AboutSection = () => {
             {/* About Text */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I am a passionate Data Scientist with strong hands-on experience in{" "}
-                <span className="text-foreground font-medium">Python, Data Analysis, Machine Learning, and Deep Learning</span>.
-                I have worked on real-world datasets and built complete ML pipelines including data preprocessing, EDA, 
-                feature engineering, model training, evaluation, and deployment using Streamlit and Flask.
+                I am a Data Scientist and Machine Learning Engineer with ongoing internship experience at{" "}
+                <span className="text-foreground font-medium">Hanumant Technology Private Limited</span>.
+                I specialize in data analysis, machine learning model development, and end-to-end ML deployment.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I enjoy solving business problems using data-driven approaches and continuously improving model 
-                performance through experimentation and analysis.
+                I have hands-on experience working with{" "}
+                <span className="text-foreground font-medium">Python, SQL, and analytics tools</span>{" "}
+                to solve real-world business problems.
               </p>
 
               {/* Highlight Cards */}
@@ -69,15 +69,19 @@ export const AboutSection = () => {
                       <span className="text-green-400">"Data Scientist"</span>,
                     </div>
                     <div>
+                      <span className="text-cyan-400">company:</span>{" "}
+                      <span className="text-green-400">"Hanumant Technology Pvt Ltd"</span>,
+                    </div>
+                    <div>
                       <span className="text-cyan-400">location:</span>{" "}
                       <span className="text-green-400">"India"</span>,
                     </div>
                     <div>
                       <span className="text-cyan-400">skills:</span>{" "}
                       <span className="text-yellow-400">[</span>
+                      <span className="text-green-400">"Python"</span>,{" "}
                       <span className="text-green-400">"ML"</span>,{" "}
-                      <span className="text-green-400">"DL"</span>,{" "}
-                      <span className="text-green-400">"NLP"</span>
+                      <span className="text-green-400">"SQL"</span>
                       <span className="text-yellow-400">]</span>,
                     </div>
                     <div>
