@@ -51,10 +51,10 @@ export const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold">Email</h4>
                     <a
-                      href="mailto:aklesh.ds@gmail.com"
+                      href="mailto:akleshmaurya68850@gmail.com"
                       className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
-                      aklesh.ds@gmail.com
+                      akleshmaurya68850@gmail.com
                     </a>
                   </div>
                 </div>
@@ -72,9 +72,8 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Social hint */}
               <p className="text-sm text-muted-foreground">
-                You can also find me on GitHub, LinkedIn, and Kaggle — links in the footer below.
+                You can also find me on GitHub and LinkedIn — links in the footer below.
               </p>
             </div>
 
