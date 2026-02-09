@@ -1,6 +1,7 @@
 import { Download, FolderOpen, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import profilePhoto from "@/assets/profile-photo.jpg";
 import { useState, useEffect } from "react";
 
 export const HeroSection = () => {
@@ -57,9 +58,16 @@ export const HeroSection = () => {
 
       <div className="section-container relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Profile Photo */}
+          <div className="mb-6 animate-fade-in">
+            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-primary/30 shadow-lg shadow-primary/20">
+              <img src={profilePhoto} alt="Aklesh" className="w-full h-full object-cover" />
+            </div>
+          </div>
+
           {/* Name */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 animate-fade-in">
-            <span className="gradient-text">Aklesh Kumar</span>
+            <span className="gradient-text">Aklesh</span>
           </h1>
 
           {/* Typewriter Role */}
