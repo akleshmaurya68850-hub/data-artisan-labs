@@ -61,7 +61,7 @@ export const HeroSection = () => {
           {/* Profile Photo */}
           <div className="mb-6 animate-fade-in">
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-primary/30 shadow-lg shadow-primary/20">
-              <img src={profilePhoto} alt="Aklesh" className="w-full h-full object-cover" />
+              <img src={profilePhoto} alt="Aklesh" className="w-full h-full object-cover object-top" />
             </div>
           </div>
 
