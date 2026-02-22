@@ -30,7 +30,7 @@ export const CertificatesSection = () => {
           <div className="text-center mb-16">
             <span className="text-primary text-sm font-semibold uppercase tracking-wider">Achievements</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2">
-              My <span className="gradient-text">Certificates</span>
+              My <span className="gradient-text">Certifications</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               Professional certifications and completed simulations
