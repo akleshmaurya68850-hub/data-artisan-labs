@@ -113,7 +113,7 @@ export const ContactSection = () => {
                     </label>
                     <Input
                       id="email"
-                      name="email"
+                      name="from_email"
                       type="email"
                       placeholder="you@example.com"
                       required
