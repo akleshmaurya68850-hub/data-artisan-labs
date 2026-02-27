@@ -17,7 +17,7 @@ export const ContactSection = () => {
 
     try {
       await emailjs.sendForm(
-        "service_sae4abu",
+        "service_g67zosu",
         "template_6vpab2s",
         formRef.current!,
         "Y6OxyOsj0cFXL4YlQ"
