@@ -101,7 +101,7 @@ export const ContactSection = () => {
                     </label>
                     <Input
                       id="name"
-                      name="name"
+                      name="from_name"
                       placeholder="Your name"
                       required
                       className="bg-background/50 border-border/50 focus:border-primary"
