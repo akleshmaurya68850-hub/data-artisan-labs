@@ -93,7 +93,7 @@ export const ContactSection = () => {
 
             {/* Contact Form */}
             <div className="md:col-span-3">
-              <form onSubmit={handleSubmit} className="glass-card rounded-xl p-6 space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="glass-card rounded-xl p-6 space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="text-sm font-medium mb-2 block">
