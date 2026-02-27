@@ -1,28 +1,42 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Send, Mail, MapPin, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+
+    try {
+      await emailjs.sendForm(
+        "service_sae4abu",
+        "template_6vpab2s",
+        formRef.current!,
+        "Y6OxyOsj0cFXL4YlQ"
+      );
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      formRef.current?.reset();
+    } catch (error) {
+      toast({
+        title: "Failed to send",
+        description: "Something went wrong. Please try again or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -79,7 +93,7 @@ export const ContactSection = () => {
 
             {/* Contact Form */}
             <div className="md:col-span-3">
-              <form onSubmit={handleSubmit} className="glass-card rounded-xl p-6 space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="glass-card rounded-xl p-6 space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="text-sm font-medium mb-2 block">
@@ -87,7 +101,7 @@ export const ContactSection = () => {
                     </label>
                     <Input
                       id="name"
-                      name="name"
+                      name="from_name"
                       placeholder="Your name"
                       required
                       className="bg-background/50 border-border/50 focus:border-primary"
@@ -99,7 +113,7 @@ export const ContactSection = () => {
                     </label>
                     <Input
                       id="email"
-                      name="email"
+                      name="from_email"
                       type="email"
                       placeholder="you@example.com"
                       required
