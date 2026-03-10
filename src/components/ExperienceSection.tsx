@@ -4,17 +4,15 @@ export const ExperienceSection = () => {
   const experiences = [
     {
       role: "Data Science Intern",
-      company: "Hanumant Technology Private Limited",
-      period: "Ongoing",
+      company: "Hanumant Technology",
+      period: "July 2025 – Present",
       description: "Working on real-world data science and ML projects in a professional environment.",
       achievements: [
-        "Data cleaning and preprocessing of large datasets",
-        "Exploratory data analysis to uncover business insights",
-        "Machine learning model development and evaluation",
-        "Feature engineering for improved model performance",
-        "Dashboard creation using Power BI and Tableau",
-        "ML deployment using Streamlit",
-        "GitHub version control and collaboration",
+        "Perform data cleaning, preprocessing, and exploratory data analysis using Python (Pandas, NumPy)",
+        "Build machine learning models for classification and prediction tasks",
+        "Apply feature engineering techniques to improve model performance",
+        "Create dashboards and visualizations using Power BI and Tableau",
+        "Deploy simple ML applications using Streamlit",
       ],
     },
   ];
