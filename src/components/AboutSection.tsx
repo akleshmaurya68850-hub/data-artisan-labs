@@ -17,15 +17,12 @@ export const AboutSection = () => {
             {/* About Text */}
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I am a Data Scientist and Machine Learning Engineer with ongoing internship experience at{" "}
-                <span className="text-foreground font-medium">Hanumant Technology Private Limited</span>.
-                I specialize in data analysis, machine learning model development, and end-to-end ML deployment.
+                Aspiring <span className="text-foreground font-medium">Data Scientist and Machine Learning Engineer</span> with hands-on internship experience in data analysis, machine learning, NLP, and dashboard development.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I have hands-on experience working with{" "}
-                <span className="text-foreground font-medium">Python, SQL, and analytics tools</span>{" "}
-                to solve real-world business problems.
+                Skilled in <span className="text-foreground font-medium">Python, SQL, Power BI</span>, and building AI-driven solutions using real-world datasets. Passionate about solving business problems through data-driven insights and intelligent systems.
               </p>
+
 
               {/* Highlight Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
